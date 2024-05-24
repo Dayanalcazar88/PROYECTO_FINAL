@@ -5,6 +5,7 @@ import morgan from 'morgan'
 import {join, dirname, extname } from 'path';
 import {fileURLToPath} from 'url';
 import {engine} from 'express-handlebars';
+import personajesRoutes from './routes/personajes.routes.js'
 
 
 
@@ -37,6 +38,8 @@ app.use(express.json());
 app.get('/',(req, res) => {
     res.render('index')
 });
+
+app.use(personajesRoutes);
 
 /* ------------------------------ public files ------------------------------ */
 app.use(express.static(join(__dirname, 'public')))

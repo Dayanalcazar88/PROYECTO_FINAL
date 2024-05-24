@@ -3,12 +3,13 @@ use video_game;
 
 create table personajes(
     id int auto_increment primary key,
-    nombre varchar(50),
-    apellido varchar(50),
-    genero varchar(10),
-    especie varchar(50),
-    tipo varchar(50),
-    caracteristicas varchar(100)
+    NAME varchar(50),
+    LAST_NAME varchar(50),
+    GENDER varchar(10),
+    SPECIES varchar(50),
+    CHARACTER_TYPE varchar(50),
+    CHARACTERISTICS varchar(100),
+    urls varchar(50)
 );
 select * from personajes;
 
