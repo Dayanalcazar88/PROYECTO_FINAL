@@ -3,7 +3,7 @@ import express, { urlencoded } from 'express'
 import morgan from 'morgan'
 
 import {join, dirname, extname } from 'path';
-import { fileURLToPath } from 'url';
+import {fileURLToPath} from 'url';
 import {engine} from 'express-handlebars';
 
 
@@ -34,8 +34,8 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.json());
 
 /* --------------------------------- routes --------------------------------- */
-app.get('/',(re, res) => {
-    res.json({"message":"hola mundo"})
+app.get('/',(req, res) => {
+    res.render('index')
 });
 
 /* ------------------------------ public files ------------------------------ */
