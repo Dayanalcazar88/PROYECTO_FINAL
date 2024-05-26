@@ -42,6 +42,31 @@ router.get('/delete/:id', async (req, res) => {
     }
 });
 
+router.get('/edit/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const [personaje] = await pool.query('SELECT * FROM personajes WHERE id = ?', [id]);
+        const personajeEdit = personaje[0]
+        res.render('personajes/edit', { personaje: personajeEdit })
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+
+router.post('/edit/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const {name,last_name,gender,species,character_type,characteristics,age} = req.body
+        const editpersonaje={name,last_name,gender,species,character_type,characteristics,age}
+        
+        await pool.query('update personajes set ? WHERE id = ?', [editpersonaje,id]);
+        res.redirect('/list');
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
 
 
 
