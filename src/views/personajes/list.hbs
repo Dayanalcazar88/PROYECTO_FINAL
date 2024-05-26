@@ -18,7 +18,7 @@
             <th scoope="col">ESPECIE</th>
             <th scoope="col">TIPO</th>
             <th scoope="col">CARACTERISTICAS</th>
-            <th scoope="col">URLS</th>
+            <th scoope="col">edad</th>
             <th scoope="col">ACCIONES</th>
             </tr>
             </thead>
@@ -30,8 +30,8 @@
                     <td>{{gender}}</td>
                     <td>{{species}}</td>
                     <td>{{character_type}}</td>
-                    <td>{{characteristic}}</td>
-                    <td>{{urls}}</td>
+                    <td>{{characteristics}}</td>
+                    <td>{{age}}</td>
                     <td>
                         <div class="btn-group">
                             <a href="/edit/{{id}}" class="btn btn-warning p-2">
@@ -40,12 +40,9 @@
 
                             <a href="/delete/{{id}}" class="btn btn-danger p-2">
                                 <i class="fa-solid fa-trash"></i>
-
-                            </a>
-                            
+                            </a>                            
                         </div>
-                    </td>
-                    
+                    </td>                    
                 </tr>
 
 

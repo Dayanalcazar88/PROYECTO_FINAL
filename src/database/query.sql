@@ -9,7 +9,8 @@ create table personajes(
     SPECIES varchar(50),
     CHARACTER_TYPE varchar(50),
     CHARACTERISTICS varchar(100),
-    urls varchar(50)
+    edad int
+
 );
 select * from personajes;
 

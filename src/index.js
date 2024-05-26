@@ -9,8 +9,6 @@ import personajesRoutes from './routes/personajes.routes.js'
 
 
 
-
-
 /* ----------------------------- inicialization ----------------------------- */
 const app = express();
 const __dirname = dirname(fileURLToPath(import.meta.url));
