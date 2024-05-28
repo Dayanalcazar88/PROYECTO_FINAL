@@ -1,72 +1,69 @@
 <div class="container">
     <div class="row mt-5">
-        <h3 class="text-center text-uppercase p-4">lista de personajes</h3>
-    </div>
-</div>
+        <h3 class="text-center text-uppercase p-2"> lista personajes</h3>
 
-{{#if personajes}}
+        {{#if personajes}}
 
-
-    <table class="table text-center">
-
-        <thead>
-
-            <tr class="table-dark">
+            <table class="table text-center">
+                <thead>
+                    <tr class="table-dark">
+                
             <th scoope="col" class="COL-4">NOMBRE</th>
             <th scoope="col">APELLIDO</th>
             <th scoope="col">GENERO</th>
             <th scoope="col">ESPECIE</th>
             <th scoope="col">TIPO</th>
             <th scoope="col">CARACTERISTICAS</th>
-            <th scoope="col">edad</th>
+            <th scoope="col">EDAD</th>
+            <th scoope="col">IMAGEN</th>
             <th scoope="col">ACCIONES</th>
-            </tr>
-            </thead>
-        <body>
-            {{#each personajes}}
-                <tr>
-                    <td>{{name}}</td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {{#each personajes}}
+                        <tr>
+                            <td>{{name}}</td>
                     <td>{{last_name}}</td>
                     <td>{{gender}}</td>
                     <td>{{species}}</td>
                     <td>{{character_type}}</td>
                     <td>{{characteristics}}</td>
                     <td>{{age}}</td>
-                    <td>
-                        <div class="btn-group">
-                            <a href="/edit/{{id}}" class="btn btn-warning p-2">
-                                <i class="fa-solid fa-pencil"></i>
-                                </a>
 
-                            <a href="/delete/{{id}}" class="btn btn-danger p-2">
-                                <i class="fa-solid fa-trash"></i>
-                            </a>                            
-                        </div>
-                    </td>                    
-                </tr>
+                            <td>
+                                <img src="/uploads/{{imagen}}" class="card-img-top mx-auto m-2 rounded-circle" style="width: 150px; height: 150px;display:block;">
+                            </td>
+                            <td> 
+                                <div class="btn-group">
+                                    <a href="/edit/{{id}}" class="btn btn-warning p-2">
+                                        <i class="fa-solid fa-pencil"></i>
+                                    </a>
+                                    <a href="/delete/{{id}}" class="btn btn-danger p-2">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
 
+                </tbody>
+            </table>
 
-            {{/each}}
+        {{else}}
 
-        </body>
+            <div class="card text-center mx-auto">
+                <div class="card-header">
+                    <h3> Debes crear un personaje</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona   boton para registrar un personaje</p>
+                    <a href="/add" class="btn btn-primary"> crear</a>
+                </div>
+            </div>
 
+        {{/if}}
 
-
-
-    </tabale>
-
-{{else}}
-
-
-    <div class="card text-center mx-auto">
-        <div class="card-header">
-            <h3>puedes crear personaje</h3>
-        </div>
-        <div class="card-body">
-            <p>presiona boton para que registres un personaje</p>
-            <a href="/add" class="btn btn-primary">crear</a>
-
-        </div>
     </div>
-
-{{/if}}
+</div>

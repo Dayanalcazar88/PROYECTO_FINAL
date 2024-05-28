@@ -6,8 +6,8 @@
                     <h4 class="text-uppercase">Editar un personaje</h4>
 
                 </div>
-                <div class="car-body ">
-                    <form action="/edit/{{personaje.id}}" method="post">
+                <div class="card-body ">
+                <form action="/edit/{{personaje.id}}" method="post" enctype="multipart/form-data">
                         <div class="input-group mt-2">
                             <label for="name" class="input-group-text"> <b>Nombre personaje </b> </label>      
                         <input class="form-control"  type="text" name="name" id="name" placeholder="nombre personaje" value="{{personaje.name}}" autofocus required>
@@ -47,11 +47,15 @@
                         <input class="form-control"  type="number" name="age" id="age" placeholder="edad personaje" value="{{personaje.age}}">
                         </div>
 
+                        {{#if personaje.imagen}}
+                            <div class="input-group mt-2">
+                                <img src="/uploads/{{personaje.imagen}}" class="card-img-top mx-auto m-2 rounded-circle" style="width: 150px; height: 150px;display:block;">
+                            </div>
+                        {{/if}}
+
                         <div class="form-group mt-4 d-grid gap-2">
                             <button class="btn btn-primary">actualizar</button>
-                        </div>
-
-                    
+                        </div>                    
                     </form>
 
                 </div>

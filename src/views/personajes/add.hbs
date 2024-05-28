@@ -1,15 +1,15 @@
-<div class="container p-4 bg-info">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card text-center">
+<div class="container width:400; p-0 bg-info ;">
+    <div class="row">  
+        <div class="col-md-4 mx-auto ">
+            <div class="card text-center ">
                 <div class="card-header">
-                    <h4 class="text-uppercase">crear nuevo personaje</h4>
+                    <h4 class="text-uppercase ">crear nuevo personaje</h4>
 
                 </div>
-                <div class="car-body ">
-                    <form action="/add" method="post">
-                        <div class="input-group mt-2">
-                            <label for="name" class="input-group-text"> <b>Nombre personaje </b> </label>      
+                <div class="card-body">
+                    <form action="/add" method="post" enctype="multipart/form-data">
+                        <div class="input-group mt-2 ">
+                            <label for="name" class="input-group-text " > <b>Nombre personaje </b> </label>      
                         <input class="form-control"  type="text" name="name" id="name" placeholder="nombre personaje" autofocus required>
                         </div>
 
@@ -46,6 +46,12 @@
                             <label for="age" class="input-group-text"> <b>Edad personaje </b> </label>      
                         <input class="form-control"  type="number" name="age" id="age" placeholder="edad personaje">
                         </div>
+
+                        <div class="input-group mt-2">
+                        <input class="form-control"  type="file" name="file" id="file" >
+                        </div>                    
+
+
 
                         <div class="form-group mt-4 d-grid gap-2">
                             <button class="btn btn-primary">crear personaje</button>
