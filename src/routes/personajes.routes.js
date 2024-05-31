@@ -51,8 +51,8 @@ router.get('/list', async(req, res) => {
     try {
      const [result] = await pool.query('SELECT * FROM personajes');
         res.render('personajes/list', {personajes: result})      
-    }catch(error) {
-    res.status(500).json({message:error.message});
+    } catch (error) {
+    res.status(500).json({message: error.message});
     }
 });
 

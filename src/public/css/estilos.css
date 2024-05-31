@@ -1,0 +1,9 @@
+.fondo {
+    background: url('../img/fondo.jpeg') #000;
+    height:max-content;            
+    background-position: absolute; 
+}
+
+.box{
+box-shadow: 9px 9px 9px 0px rgba(4, 156, 41, 0.75);
+}
